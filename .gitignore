@@ -6,7 +6,6 @@ __pycache__/
 # C extensions
 *.so
 
-/data 
 
 # Distribution / packaging
 .Python
@@ -172,3 +171,11 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# DVC
+.dvc/cache/
+.dvc/tmp/
+.dvc/config.local
+
+# Secrets
+config/service-account.json

@@ -2,10 +2,10 @@ import logging
 from zenml import step 
 import pandas as pd 
 
-from pydantic import ConfigDict 
+ 
 
-@step 
-def ingest_df(path:str) -> None:
+@step  
+def ingest_df(path:str) -> pd.DataFrame:
     """
     This  function is repsonsible for ingestion step.. 
     args: path 
