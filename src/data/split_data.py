@@ -1,7 +1,7 @@
 import logging 
 import pandas as pd 
 from sklearn.model_selection import train_test_split 
-
+import os 
 
 class SplitData:
     def __init__(self,df, train_path, test_path):
@@ -19,6 +19,10 @@ class SplitData:
         Returns:
             None
         """
+        # Check if train and test files already exist
+        if os.path.exists(self.train_path) and os.path.exists(self.test_path):
+            logging.info("Train and test files already exist. Skipping data splitting.")
+            return
         X = self.df.drop(columns=[target])
         y = self.df[target]
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
